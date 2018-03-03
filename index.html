@@ -6,7 +6,26 @@
     <script src="js/script.js"></script>
   </head>
 <body>
-  <h1 id="title">HTML JSON testing</h1>
+  <h1 id="title">Firebase testing</h1>
+  
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAPhRKCBBYNrbQitUzmY6NaTK3HibPf8bQ",
+    authDomain: "james1-c959e.firebaseapp.com",
+    databaseURL: "https://james1-c959e.firebaseio.com",
+    projectId: "james1-c959e",
+    storageBucket: "",
+    messagingSenderId: "689097601775"
+  };
+  firebase.initializeApp(config);
+    
+    var bigOne = document.getElementById('bigOne');
+    var dbRef = firebase.database().ref().child('text');
+    dbRef.on('value',snap =>bigOne.innerText = snap.val());
+    
+  </script>
   
   <p>
     <button>
